@@ -99,13 +99,27 @@
             },
           },
           edges: {
-            width: 0.15,
-            color: { inherit: "from" },
+            width: 2,
+            shadow: true,
             smooth: {
-              type: "continuous",
+              enabled: true,
+              roundness: 0.5,
+              type: "cubicBezier",
+              forceDirection: "none",
             },
           },
-          physics: false,
+          physics: {
+            forceAtlas2Based: {
+              avoidOverlap: 0.25,
+              gravitationalConstant: -95,
+              centralGravity: 0.01,
+              springLength: 100,
+              springConstant: 0.19,
+              damping: 0.5,
+            },
+            minVelocity: 0.5,
+            solver: "forceAtlas2Based",
+          },
           interaction: {
             navigationButtons: true,
             keyboard: true,
